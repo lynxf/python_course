@@ -9,17 +9,17 @@ def plural(n, staff ) :
         return staff[0]
     else :
         return staff[2]
-iron = ['утюг','утюга','утюгов']
-spoon = ['ложка','ложки','ложек']
-harmonica = ['гармошка','гармошки','гармошек']
-kettle = ['чайник','чайника','чайников']
+iron = ['СѓС‚СЋРі','СѓС‚СЋРіР°','СѓС‚СЋРіРѕРІ']
+spoon = ['Р»РѕР¶РєР°','Р»РѕР¶РєРё','Р»РѕР¶РµРє']
+harmonica = ['РіР°СЂРјРѕС€РєР°','РіР°СЂРјРѕС€РєРё','РіР°СЂРјРѕС€РµРє']
+kettle = ['С‡Р°Р№РЅРёРє','С‡Р°Р№РЅРёРєР°','С‡Р°Р№РЅРёРєРѕРІ']
 word = input ()
 count = int(input())
-if word == 'утюг':
+if word == 'СѓС‚СЋРі':
     proper_word = plural(count, iron)
-elif word == 'гармошка':
+elif word == 'РіР°СЂРјРѕС€РєР°':
     proper_word = plural(count, harmonica)
-elif word == 'чайник':
+elif word == 'С‡Р°Р№РЅРёРє':
     proper_word = plural(count, kettle)
 else:
     proper_word = plural(count, spoon)
