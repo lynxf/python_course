@@ -1,11 +1,4 @@
-def rpfilter(n):
-    b = []
-    for i in a:
-        b.append(int(i))
-    lst = b[1:]
-    s = b[0]
-    lst1 = []
-
+def rpfilter(n, *a):
     def euclid(a, b):
         k = max(a, b)
         l = min(a, b)
@@ -13,12 +6,17 @@ def rpfilter(n):
             return l
         else:
             return euclid(l, k % l)
-    for i in lst:
-            if euclid(s, i) == 1:
+    b = []
+    lst1 = []
+    for i in a:
+        i = int(i)
+        b. append(i)
+        if euclid(n, i) == 1:
                 lst1.append(i)
     return lst1
 a = input().split()
-lst2 = rpfilter(a)
+c = int(a[0])
+lst2 = rpfilter(c, *a)
 if len(lst2) == 0:
     print(None)
 else:
