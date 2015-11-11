@@ -13,10 +13,21 @@ def import_song(file_name):
             song = self.name+' '+self.artist+' '+self.album+' '+self.position+' '+self.year+' '+self.duration
             return(song)
     for i in file:
-        #i = i.strip()
         name, artist, album, position, year, duration = i.split("\t")
         t = (name, artist, album, position, year, duration)
         songs.append(t)
     return(songs)
+    
+def export_songs(songs, file_names):
+    f = open(file_names, "w")
+    for i in songs:
+        t = i[0]
+        k = i[1]
+        l = i[2]
+        n = i[3]
+        m = i[4]
+        r = i[5]
+        f.write(t+"\t"+k+"\t"+l+"\t"+n+"\t"+m+"\t"+r+"\n")
+    f.close()
     
 
