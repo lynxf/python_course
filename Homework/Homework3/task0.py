@@ -1,4 +1,4 @@
-def import_song(file_name):
+
     file = open(file_name, "r")
     songs = []
     class Song:
