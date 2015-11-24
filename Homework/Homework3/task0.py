@@ -18,16 +18,21 @@ class Song:
             return True
         return False
     
+def import_song(file_name):
+    file = open(file_name, "r")
+    songs = []
+    for i in file:
+        i = i.strip()
+        for j in i:
+            name, artist, album, position, year, duration = i.split("\t")
+            t = (name, artist, album, position, year, duration)
+            songs.append(t)
+        return(songs)
+        
 def export_songs(songs, file_names):
-    f = open(file_names, "w")
-    for i in songs:
-        t = i[0]
-        k = i[1]
-        l = i[2]
-        n = i[3]
-        m = i[4]
-        r = i[5]
-        f.write(t+"\t"+k+"\t"+l+"\t"+n+"\t"+m+"\t"+r+"\n")
-    f.close()
+    with open(file_names, "w") as tsv:
+        for i in songs:
+            tsv_songs = i.name+'\t'+i.artist+'\t'+i.album+'\t'+i.position+'\t'+i.year+'\t'+i.duration
+            tsv.write(tsv_songs)
     
 
