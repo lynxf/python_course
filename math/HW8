@@ -1,24 +1,72 @@
 #1 задача
-def bin_search(a, n):
+
+def bin_s(a, n):
     c = 0
-    k = -1
-    list = int(len(a) + 1)
+    lst = int(len(a) + 1)
     
     if n > a[int(len(a))-1]:
-        return k 
+        return -1
     else:
-        while c < list - 1:              
-            h = int((c + list) / 2)            
-            if a[h] > n:
-                list = h
+        while c < lst - 1:              
+            lst2 = int((c + lst) / 2)            
+            if a[lst2] < n:
+                c = lst2
             else: 
-                c = m 
+                lst = lst2 
 
-        if a[list] == n:
-            return list     
+        if a[lst] == n:
+            return lst     
         elif a[0] == n:
             return 0
         else:
-            return k
+            return -1
             
 # сложность по времени О(log(n))
+# 2 задача
+
+def merge(a, b):
+    c = []
+    A = 0
+    B = 0
+        
+    while A != len(a) and B != len(b):
+        if a[A] <= b[B]:
+            c.append(a[A])
+            A += 1
+        else:
+            c.append(b[B])
+            B += 1
+    while A != len(a):
+        c.append(a[A])
+        A += 1
+    while B != len(b):
+        c.append(b[B])
+        B += 1
+        
+    return c
+
+
+def merge_sort(lst):
+    if len(lst) <= 1:
+        return lst
+    lst[:int(len(lst)/2)] = merge_sort(lst[:int(len(lst)/2)])
+    lst[int(len(lst)/2):] = merge_sort(lst[int(len(lst)/2):])
+    lst = merge(lst[:int(len(lst)/2)], lst[int(len(lst)/2):])
+    return lst
+    
+def search(l, x):
+    l = merge_sort(l)
+    c = 0
+    lst2 = int(len(l)-1)
+    
+    while c != lst2:
+        if l[c] + l[lst2] == x:
+            res="есть"
+            return res
+        else:
+            if l[c] + l[lst2] > x:
+                lst2 -= 1
+            else:
+                c += 1
+            
+    return "нет"
