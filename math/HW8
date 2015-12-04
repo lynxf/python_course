@@ -1,4 +1,39 @@
-#1 задача
+#доделанные задачи из ДЗ №6
+# задача 4 и 1 переделанные
+def M(lst):
+    e = lst[0]
+    c = 1
+    for i in range(1, len(lst)):
+        if lst[i]==e:
+            c+=1
+        else:
+            c-=1
+            if c == -1:
+                e = lst[i]
+                c = 1
+    n = 0
+    for x in lst:
+        if e == x:
+            n += 1
+    if n < len(lst)/2:
+        e = None
+    return e
+
+
+def Gene(lst, n):
+    c = 1
+    for i in lst:
+        if c != len(lst):
+            if i < n < lst[c]:
+                r = (lst[c] + i)/2
+                if n > (r):
+                    print(lst[c])
+                else:
+                    print(i)
+        c += 1
+
+
+#1 задача дз № 8 исправленная
 
 def bin_s(a, n):
     c = 0
@@ -22,7 +57,7 @@ def bin_s(a, n):
             return -1
             
 # сложность по времени О(log(n))
-# 2 задача
+# 2 задача дз № 8
 
 def merge(a, b):
     c = []
