@@ -13,7 +13,6 @@ with open("hp5.txt", "r") as d:
 d = {}
 for i in Lst:
     if i not in d:
-        print(i)
         d[i] = 1
     else:
         d[i] += 1
