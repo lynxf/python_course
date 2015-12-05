@@ -1,0 +1,24 @@
+# задача 3
+class Stack:
+    
+    def __init__(self, l):
+        self.items = [0 for x in range(l)]
+        self.i = 0
+    def push(self, e): #добавляем
+        if self.i == len(self.items):
+            print ("Full")
+        else:
+            self.items[self.i] = e
+            self.i += 1
+    def pop(self):#удаление последнего добавленного элемента
+        self.i -= 1
+    def size(self):# длина стека
+        return(self.i)
+    def isEmpty(self):# проверка на пустоту
+        if self.i == 0:
+            return True
+        else:
+            return False
+    def top(self):# возвращаем последний добавленный элемент
+        return self.items[self.i-1]
+    
