@@ -22,3 +22,18 @@ class Stack:
     def top(self):# возвращаем последний добавленный элемент
         return self.items[self.i-1]
     
+def bracket(s):
+    l = Stack(len(s))
+    for i in range(len(s)):
+        if s[i] == '(' or s[i] == '{': #проверяем наличие открытых скобок
+            l.push(s[i])#добавляем в стек
+        else:
+            if l.isEmpty() == True:# если мы не нашли открытыю скобку и стек пуст, то мы возвращаем False
+                return False
+            elif s[i] == ')' and l.top() == '(': #если мы нашли закрывающую скобку и последней добавленной в стек была открывающая того же типа, то мы удаляем открывающую скобку из стека
+                l.pop()
+            elif s[i] == '}' and l.top() == '{':#аналогично предыдущему
+                l.pop()
+            else:
+                return False
+    return l.isEmpty()# по итогам стек должен быть пустым
