@@ -4,4 +4,4 @@ def sum(a, b):
     elif a < 0 or b < 0:
         raise ValueError
     else:
-        return int(a)+int
+        return int(a)+int(b)
