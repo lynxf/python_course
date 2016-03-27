@@ -1,0 +1,31 @@
+# -*- coding: utf8 -*-
+import argparse
+import shutil
+import os
+import subprocess
+
+
+parser = argparse.ArgumentParser(description="This program is doing "
+                                             "something very important")
+parser.add_argument('command', type=str, choices=['store', 'diff'],
+                    help="store - to save the file in a directory 'sad',"
+                         "diff - run diff for file from 'sad'")
+parser.add_argument('path', type=str,
+                    help='file location for "store",'
+                         'filename for "diff"')
+
+args = parser.parse_args()
+command = args.command
+path = args.path
+
+sad = 'C:\\Users\\Администратор\\python_course\\Homework\\sad\\'
+
+if command == 'store':
+    if os.path.isfile(path):
+        shutil.copy(path, sad)
+        print('mission complete')
+
+if command == 'diff':
+    path_in, path_sad = sad + path, path
+    subprocess.run(['diff', path_in, path_sad], shell=True)
+    print('mission complete')
