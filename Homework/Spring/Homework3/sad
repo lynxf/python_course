@@ -24,8 +24,7 @@ if command == 'store':
     if os.path.isfile(path):
         shutil.copy(path, sad)
         print('mission complete')
-
-if command == 'diff':
+else:
     path_in, path_sad = sad + path, path
     subprocess.run(['diff', path_in, path_sad], shell=True)
     print('mission complete')
