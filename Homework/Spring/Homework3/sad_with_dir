@@ -30,13 +30,6 @@ if command == 'store':
     else:
         print(":(")
 else:
-    if os.path.isfile(path):
-        path_in, path_sad = sad + path, path
-        subprocess.run(['diff', path_in, path_sad])
-        print('mission complete')
-    elif os.path.isdir(path):
-        path_in, path_sad = sad + path, path
-        subprocess.run(['diff', path_in, path_sad])
-        print('mission complete')
-    else:
-        print(":(")
+    path_in, path_sad = sad + path, path
+    subprocess.run(['diff', path_in, path_sad])
+    print('mission complete')
