@@ -1,0 +1,13 @@
+1. select * from Users;
+2. select id, count(id) from users;
+3. select count(*) from users where birth_date <= date('1976-01-01');
+4. select country, count(*) from users group by country;
+5. select name, count(*) as a from users group by name order by a desc limit 5;
+6. select count(*) created from orders where created >= ('2016-01-01 00:00:00');
+7. select date(created) as x, count(*) as a from orders group by x order by a desc limit 5;
+8. 
+9. select * from goods where name like "%bread%";
+10.
+11. select goodsinorders.order_id, good_id, sum(price), name, goods.price, orders.created, paid from orders inner join goodsinorders on order_id = orders.id inner join goods on good_id = goods.id  where paid = 1 and date(created) >= date("2016-01-01");
+12.
+13. 
